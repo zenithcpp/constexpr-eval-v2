@@ -1,4 +1,4 @@
-# constexpr_eval v1.5 — Community Edition (Final Release)
+# constexpr_eval v1.7 — Community Edition/Updated
 
 Single-header, zero-dependency constexpr arithmetic expression evaluator for C++17+ (C++23 recommended).
 
