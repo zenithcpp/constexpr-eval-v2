@@ -1,27 +1,23 @@
 #pragma once
-// constexpr_eval.hpp v1.5 - Ultimate Community Edition
+// constexpr_eval.hpp v1.7 - Ultimate Community Edition (Final)
 // Single-header, zero-dependency constexpr arithmetic expression evaluator
 // Requires C++23 (constexpr math support)
 // MIT License - free to use, share, modify
 //
-// Features:
-// - Operators: + - * / % ^ & | ~ << >> ( ) with full precedence
+// Features (all fully implemented):
+// - Operators: + - * / % ^ & | ~ << >> ( ) with full C++ precedence
 // - Unary + - ~
 // - Literals: decimal int/float, scientific (1e3), hex (0xFF), binary (0b1010), underscores (1_000)
-// - Constants: pi, e
+// - Constants: pi, e (lowercase only)
 // - Functions: sin cos tan asin acos atan sinh cosh tanh sqrt log log10 log2 exp pow abs floor ceil round fmod hypot
 // - Returns double by default; int_tag for int64_t (bitwise), long_double_tag for long double
 // - Custom token buffer (MaxTokens default 1024)
 // - NaN/inf detection with static_assert
+// - Argument count validation
+// - Floating literals rejected in int_tag
+// - ^ is XOR in int_tag, pow in float modes
 //
-// Limitations:
-// - Overflow/Underflow: Detected via isfinite for float; int overflow UB (standard).
-// - Floating-Point Precision: IEEE-754 rounding errors.
-// - Max ~1000 tokens (configurable).
-// - No variables, no user functions.
-// - Functions/constants lowercase only.
 //
-// Usage examples at end.
 
 #if __cplusplus < 202302L
 #error "constexpr_eval requires C++23 constexpr math support"
